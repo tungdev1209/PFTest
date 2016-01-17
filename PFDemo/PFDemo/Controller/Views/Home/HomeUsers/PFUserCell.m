@@ -15,9 +15,8 @@
 }
 
 -(void)loadUser:(PFUser *)user{
-    UIImageView *avatar = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, 40, 40)];
-    avatar.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user.imageURL]]];
-    [self.contentView addSubview:avatar];
+    _avatar = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [self.contentView addSubview:_avatar];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -10,6 +10,8 @@
 
 @interface PFUserCell : UITableViewCell
 
+@property (nonatomic, strong) UIImageView *avatar;
+
 -(void)loadUser:(PFUser*)user;
 
 @end

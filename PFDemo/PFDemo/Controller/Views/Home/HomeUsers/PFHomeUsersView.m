@@ -54,6 +54,22 @@
     
     [cell loadUser:_arrUsers[indexPath.row]];
     
+    NSURL *url = [NSURL URLWithString:[(PFUser*)_arrUsers[indexPath.row] imageURL]];
+    
+    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data) {
+            UIImage *image = [UIImage imageWithData:data];
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    PFUserCell *updateCell = (PFUserCell*)[tableView cellForRowAtIndexPath:indexPath];
+                    if (updateCell)
+                        updateCell.avatar.image = image;
+                });
+            }
+        }
+    }];
+    [task resume];
+    
     return cell;
 }
 
