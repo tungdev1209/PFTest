@@ -96,27 +96,23 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://54.255.201.10:9000/users"]];
     [request setHTTPMethod:@"GET"];
     
-//    NSDictionary *postDict = @{@"email":user.email,
-//                               @"password":user.password};
-//    NSData *postData = [self encodeDictionary:postDict];
-//    [request setHTTPBody:postData];
-//    
-//    NSError *error = nil;
-//    [self doRequest:request completion:^(NSData *data) {
-//        NSError *parseError;
-//        if (data) {
-//            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
-//                                                                 options:kNilOptions
-//                                                                   error:&parseError];
-//            PFUser *userLoggedIn = [[PFUser alloc]init];
-//            userLoggedIn.dataSource = json[@"user"];
-//            _token = json[@"token"];
-//            completion(userLoggedIn);
-//        }
-//        else{
-//            completion(nil);
-//        }
-//    } error:&error];
+    NSDictionary *postDict = @{@"Authorization":[NSString stringWithFormat:@"m %@", _token]};
+    NSData *postData = [self encodeDictionary:postDict];
+    [request setHTTPBody:postData];
+    
+    NSError *error = nil;
+    [self doRequest:request completion:^(NSData *data) {
+        NSError *parseError;
+        if (data) {
+            NSArray *json = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:kNilOptions
+                                                                   error:&parseError];
+            completion(json);
+        }
+        else{
+            completion(nil);
+        }
+    } error:&error];
 }
 
 - (NSData*)encodeDictionary:(NSDictionary*)dictionary {
