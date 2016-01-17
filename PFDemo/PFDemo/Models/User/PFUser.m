@@ -10,4 +10,8 @@
 
 @implementation PFUser
 
+-(NSString *)imageURL{
+    return _dataSource[@"avatar"];
+}
+
 @end

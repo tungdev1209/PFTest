@@ -14,4 +14,6 @@
 
 @property (nonatomic, weak) PFHomeViewController *homePage;
 
+-(void)loginCompleted;
+
 @end

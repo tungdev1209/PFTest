@@ -36,6 +36,7 @@
 		1884BEE61C4A223E0052BB4B /* PFHomeSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1884BED11C4A223E0052BB4B /* PFHomeSettingsView.m */; };
 		1884BEE71C4A223E0052BB4B /* PFSlideViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 1884BED41C4A223E0052BB4B /* PFSlideViews.m */; };
 		1884BEE81C4A223E0052BB4B /* PFHomeUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1884BED71C4A223E0052BB4B /* PFHomeUsersView.m */; };
+		1884BEEB1C4C4CB10052BB4B /* PFUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1884BEEA1C4C4CB10052BB4B /* PFUserCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		1884BED41C4A223E0052BB4B /* PFSlideViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFSlideViews.m; sourceTree = "<group>"; };
 		1884BED61C4A223E0052BB4B /* PFHomeUsersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFHomeUsersView.h; sourceTree = "<group>"; };
 		1884BED71C4A223E0052BB4B /* PFHomeUsersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFHomeUsersView.m; sourceTree = "<group>"; };
+		1884BEE91C4C4CB10052BB4B /* PFUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFUserCell.h; sourceTree = "<group>"; };
+		1884BEEA1C4C4CB10052BB4B /* PFUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFUserCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,6 +434,8 @@
 			children = (
 				1884BED61C4A223E0052BB4B /* PFHomeUsersView.h */,
 				1884BED71C4A223E0052BB4B /* PFHomeUsersView.m */,
+				1884BEE91C4C4CB10052BB4B /* PFUserCell.h */,
+				1884BEEA1C4C4CB10052BB4B /* PFUserCell.m */,
 			);
 			path = HomeUsers;
 			sourceTree = "<group>";
@@ -573,6 +578,7 @@
 				1884BEDF1C4A223E0052BB4B /* PFAboutViewController.m in Sources */,
 				1884BEDB1C4A223E0052BB4B /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				1884BD6A1C4530520052BB4B /* AppDelegate.m in Sources */,
+				1884BEEB1C4C4CB10052BB4B /* PFUserCell.m in Sources */,
 				1884BE3B1C459D360052BB4B /* PFSettings.m in Sources */,
 				1884BEDA1C4A223E0052BB4B /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				1884BEE71C4A223E0052BB4B /* PFSlideViews.m in Sources */,

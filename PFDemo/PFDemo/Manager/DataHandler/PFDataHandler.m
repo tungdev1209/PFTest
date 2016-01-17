@@ -96,9 +96,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://54.255.201.10:9000/users"]];
     [request setHTTPMethod:@"GET"];
     
-    NSDictionary *postDict = @{@"Authorization":[NSString stringWithFormat:@"m %@", _token]};
-    NSData *postData = [self encodeDictionary:postDict];
-    [request setHTTPBody:postData];
+    [request setValue:[NSString stringWithFormat:@"m %@", _token] forHTTPHeaderField:@"Authorization"];
     
     NSError *error = nil;
     [self doRequest:request completion:^(NSData *data) {
@@ -107,7 +105,14 @@
             NSArray *json = [NSJSONSerialization JSONObjectWithData:data
                                                                  options:kNilOptions
                                                                    error:&parseError];
-            completion(json);
+            NSMutableArray *arrUsers = [NSMutableArray array];
+            PFUser *user;
+            for (NSDictionary *dic in json) {
+                user = [[PFUser alloc]init];
+                user.dataSource = dic;
+                [arrUsers addObject:user];
+            }
+            completion(arrUsers);
         }
         else{
             completion(nil);

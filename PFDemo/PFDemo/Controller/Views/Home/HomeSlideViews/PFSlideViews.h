@@ -11,5 +11,6 @@
 @interface PFSlideViews : UIScrollView
 
 -(void)loadItemViews;
+-(void)loginCompleted;
 
 @end

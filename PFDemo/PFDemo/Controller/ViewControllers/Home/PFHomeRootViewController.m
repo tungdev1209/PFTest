@@ -39,6 +39,10 @@
 //    [_AppSlideViewController setEnableSwipeGesture:YES forVC:self];
 }
 
+-(void)loginCompleted{
+    [_slideViews loginCompleted];
+}
+
 //-(void)handleGesture{
 //    NSLog(@"pan");
 //}
@@ -54,15 +58,6 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"");
-}
-
--(void) setAnimatorSlide
-{
-    id <SlideNavigationContorllerAnimator> revealAnimator;
-    revealAnimator = [[SlideNavigationContorllerAnimatorSlide alloc] init];
-    [SlideNavigationController sharedInstance].menuRevealAnimator = revealAnimator;
-    [[SlideNavigationController sharedInstance] setEnableSwipeGesture:YES];
-    
 }
 
 /*

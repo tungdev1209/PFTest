@@ -57,6 +57,7 @@
 
 -(void)pushToSlideViews{
     _slideMenu.enableSwipeGesture = YES;
+    [_homeRootViewController loginCompleted];
 }
 
 -(void)pushLoginView{

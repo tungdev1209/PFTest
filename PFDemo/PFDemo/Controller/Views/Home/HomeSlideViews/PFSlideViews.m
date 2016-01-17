@@ -57,11 +57,13 @@
     
     _homeUsersView = [[PFHomeUsersView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     _homeUsersView.backgroundColor = [UIColor yellowColor];
-    
-    [_homeUsersView loadView];
-    
+        
     [self addSubview:_homeUsersView];
     [self addSubview:_homeSettingsView];
+}
+
+-(void)loginCompleted{
+    [_homeUsersView loadView];
 }
 
 -(void)loadSubviewsOnScrollViewByIndex:(NSArray*)indexes{
