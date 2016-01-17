@@ -14,4 +14,8 @@
     return _dataSource[@"avatar"];
 }
 
+-(NSString *)username{
+    return _dataSource[@"name"];
+}
+
 @end

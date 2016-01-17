@@ -17,6 +17,10 @@
 -(void)loadUser:(PFUser *)user{
     _avatar = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, 40, 40)];
     [self.contentView addSubview:_avatar];
+    
+    UILabel *lblName = [[UILabel alloc]initWithFrame:CGRectMake(60, 10, 100, 40)];
+    lblName.text = user.username;
+    [self.contentView addSubview:lblName];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
