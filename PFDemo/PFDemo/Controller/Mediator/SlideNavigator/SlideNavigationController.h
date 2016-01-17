@@ -75,4 +75,6 @@ extern NSString  *const SlideNavigationControllerDidReveal;
 - (void)toggleRightMenu;
 - (BOOL)isMenuOpen;
 
+- (void)setEnableSwipeGesture:(BOOL)markEnableSwipeGesture forVC:(UIViewController*)viewController;
+
 @end

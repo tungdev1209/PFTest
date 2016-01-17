@@ -9,13 +9,10 @@
 #import "PFDataHandler.h"
 #import "PFSettings.h"
 #import "PFBaseViewController.h"
-//#import "PFStartupViewController.h"
 
 #import "SlideNavigationController.h"
 
 @interface PFCoreViewController : NSObject
-
-//@property (nonatomic, strong, readonly) PFStartupViewController *startupVC;
 
 @property (nonatomic, strong) SlideNavigationController *slideMenu;
 

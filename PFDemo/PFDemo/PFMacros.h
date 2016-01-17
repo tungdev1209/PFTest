@@ -12,6 +12,7 @@
 #define _AppDelegate [AppDelegate sharedDelegate]
 #define _AppCoreViewController [PFCoreViewController shareCore]
 #define _AppManager [PFApplicationManager shareManager]
+#define _AppSlideViewController [SlideNavigationController sharedInstance]
 
 #define _AppDataHandler [_AppManager appDataHandler]
 #define _AppSettings [_AppManager appSettings]

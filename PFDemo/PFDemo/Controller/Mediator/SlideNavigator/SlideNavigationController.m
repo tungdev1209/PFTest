@@ -847,17 +847,21 @@ static SlideNavigationController *singletonInstance;
 	return _panRecognizer;
 }
 
-- (void)setEnableSwipeGesture:(BOOL)markEnableSwipeGesture
+- (void)setEnableSwipeGesture:(BOOL)markEnableSwipeGesture forVC:(UIViewController*)viewController
 {
 	_enableSwipeGesture = markEnableSwipeGesture;
-	
+    UIView *view = viewController.view;
+    if (!view) {
+        view = self.view;
+    }
+    
 	if (_enableSwipeGesture)
 	{
-		[self.view addGestureRecognizer:self.panRecognizer];
+		[view addGestureRecognizer:self.panRecognizer];
 	}
 	else
 	{
-		[self.view removeGestureRecognizer:self.panRecognizer];
+		[view removeGestureRecognizer:self.panRecognizer];
 	}
 }
 

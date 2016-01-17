@@ -21,7 +21,7 @@
 
 -(instancetype)initWithDelegate:(id<NSObject>)delegate;
 -(void)checkLoginState:(id<PFDataHandlerDelegate>)sender;
--(void)getUsers:(NSArray *(^)())completion;
+-(void)getUsers:(void(^)(NSArray *users))completion;
 -(void)signupUser:(PFUser *)newUser completion:(void (^)(BOOL success))completion;
 -(void)login:(PFUser *)user completion:(void (^)(PFUser *currentUser))completion;
 

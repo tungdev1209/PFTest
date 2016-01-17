@@ -24,6 +24,13 @@
     return @"PFLoginViewController";
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    _tfPassword.text = @"fff";
+    _tfEmail.text = @"f@f.com";
+}
+
 -(IBAction)btnLoginPressed:(id)sender{
     PFUser *user = [[PFUser alloc]init];
     user.email = _tfEmail.text;

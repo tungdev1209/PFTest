@@ -92,11 +92,31 @@
     } error:&error];
 }
 
--(void)getUsers:(NSArray *(^)())completion{
+-(void)getUsers:(void(^)(NSArray *users))completion{
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://54.255.201.10:9000/users"]];
     [request setHTTPMethod:@"GET"];
     
-    
+//    NSDictionary *postDict = @{@"email":user.email,
+//                               @"password":user.password};
+//    NSData *postData = [self encodeDictionary:postDict];
+//    [request setHTTPBody:postData];
+//    
+//    NSError *error = nil;
+//    [self doRequest:request completion:^(NSData *data) {
+//        NSError *parseError;
+//        if (data) {
+//            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+//                                                                 options:kNilOptions
+//                                                                   error:&parseError];
+//            PFUser *userLoggedIn = [[PFUser alloc]init];
+//            userLoggedIn.dataSource = json[@"user"];
+//            _token = json[@"token"];
+//            completion(userLoggedIn);
+//        }
+//        else{
+//            completion(nil);
+//        }
+//    } error:&error];
 }
 
 - (NSData*)encodeDictionary:(NSDictionary*)dictionary {
